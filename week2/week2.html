@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>week2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="mycss.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <td><a href="../index.html"><div align="right"><button> Home page </button></div></a></td>
+    
+<h1 id="week-2-project-management">Week 2: Project Management</h1>
+<h2 id="week-objectives">Week objectives:</h2>
+<ol type="1">
+<li><p>To be familiar with GitLab.</p></li>
+<li><p>Build my own website and learn some HTML.</p></li>
+</ol>
+<h2 id="new-software-used-in-this-week">New software used in this week:</h2>
+<ol type="1">
+<li><p>Git.</p></li>
+<li><p>Brackets.</p></li>
+<li><p>Mkdocs</p></li>
+</ol>
+<h3 id="to-start-with-gitlab">To start with Gitlab:</h3>
+<p>To make sure that i am sharing my info in the right and easy way , and as Neil guide us to get an account in Gitlab and configure it with our computer by allowing it to share the files by the SSh-key</p>
+    
+<p>First I did download <a href="https://git-scm.com/">Git</a> for Mac in my laptop. Git is VCS (version control system) locally track changes in my projects/folders and push &amp; pull changes from remote repositories like Gitlab. This definition was mention in this <a href="https://www.youtube.com/playlist?list=PLhW3qG5bs-L8YSnCiyQ-jD8XfHC2W1NL_">tutorial</a> I watch it to learn more about Git and GitLab.</p>
+<p><img src="images2/gitDL1.png" /></p>
+<p>The second step is Installing Git, I faced some problems when I try to click the package of compressed installer files to install it, I figure out then I need to press right click and click on open to give permeation to download the file. This happens sometime in Mac when free programs are downloaded from the internet for safety reasons.</p>
+<p><img src="images2/img1.png" /></p>
+<p>The next step is to create an account in <strong><a href="https://about.gitlab.com/">Gitlab</a></strong>, its powerful tool to manage projects and sharing them. I was hoping to know about it before, I think it will be a useful tool to use it in university study.</p>
+<p><img src="images2/gitaccount2.png" /></p>
+<h3 id="configuring-git">Bash Commands</h3>
+    <p>What is Bash? Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands </p>
+    <p>Before using terminal I learn few bash commands</p>
+    <p><img src="images2/bash%20commands.png" /></p>
+<h3 id="configuring-git">Configuring Git</h3>
+<p>The first step in configuration Git in Mac operating system is to open the Terminal and type <code>git --version</code> to check if Git correctly installed by showing the number of the version. we need to do the configuration only once to connect my device with my account in Gitlab.</p>
+<p><img src="images2/git%20version.png" /></p>
+<p>Enter my Gitlab username and E-mail :</p>
+<p><img src="images2/git%20user%20.png" /></p>
+<p><img src="images2/git%20email.png" /></p>
+<p>The next step is Generating the <strong>ssh key</strong> pair in order to insure the connection between the Gitlab and my laptop secure, Also I will not need to enter my username and password each time.</p>
+<p>By typing this command <code>ssh-keygen –t –b 4096 –c example@hotmail.com</code> as shown the screenshot of key fingerprint generated only for my device.</p>
+<p><img src="images2/git%20ssh1.png" /></p>
+<p>Then <strong>.ssh</strong> folder will generate, inside it there is file called <strong>id_rsa.pud</strong> we open it with text reader and copy all text or I used bash command (cat) to print it in the terminal then I copy it.</p>
+<p>Afterward, I <strong>open Gitlab</strong> &gt; <strong>settings</strong> &gt; <strong>ssh keys</strong>, I did paste the key there and press <strong>add key</strong>.</p>
+<p><img src="images2/SSH%20key2.png" /></p>
+<p><img src="images2/git%20sshsit1.png" /></p>
+<p><img src="images2/git%20sshsit2.png" /></p>
+<p>The last step I did receive confirmation E-mail that the key is added to my account.</p>
+<p><img src="images2/git%20sshsit3.png" /></p>
+
+<p>We did learn two important commands that we will use it frequently which are:</p>
+<ol type="1">
+<li><strong>Cloning a Gitlab Project:</strong></li>
+</ol>
+<p>Transfer the files and folders from Gitlab to my device (locally) and the used command is:</p>
+<pre><code>```
+ git clone git@gitlab.fabcloud.org:academany/fabacademy/2023/labs/uae/students/abdallah-alhammadi.git
+
+```</code></pre>
+<p>The link used in the command above we can get it from Gitlab as shown in the screenshot below:</p>
+<p><img src="images2/git%20clone1.png" /></p>
+<p>When we do clone in Mac, Massage will appear asking <strong>Are you sure you want to continue connecting (yes/No)?</strong> we must answer <em>yes</em>.</p>
+<ol start="2" type="1">
+<li><strong>Pushing to GitLab:</strong></li>
+</ol>
+<p>Whenever I update my files or folders locally, I need to type the below commands to update my repository in Gitlab:</p>
+<pre><code>git add .
+
+git commit –m &quot; message &quot;
+
+git push</code></pre>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th style="text-align: center;"><a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Function</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>git pull</td>
+<td style="text-align: center;">Bring and merge changes on the remote server to the directory.</td>
+</tr>
+<tr class="even">
+<td>git add –all</td>
+<td style="text-align: center;">Add all new or modified files to the remote repository.</td>
+</tr>
+<tr class="odd">
+<td>git commit</td>
+<td style="text-align: center;">Commit changes to head, each file commit described by a message.</td>
+</tr>
+<tr class="even">
+<td>git push</td>
+<td style="text-align: center;">Send changes to the master branch of your remote repository.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="images2/img12.png" /></p>
+<p>It’s important to remember before type any git command, to choose the directory where the commands will be applied by using this command: <code>cd file/folder "name"</code> . As shown above I did enter <code>desktop</code> &gt; <code>LabAcd</code> &gt; <code>abdallah-alhammadi</code> folder, afterward I push the changes.</p>
+<p><img src="images2/file%20path1.png" /></p>
+<h4 id="creating-a-website">Creating a Website</h4>
+<p>For the website I used free templet called <a href="https://colorlib.com/wp/template/jackson/">Jackson</a> from <a href="https://colorlib.com/">colorlib</a>, this was my first time to editing website using HTML (Hypertext Markup Language). Its language used for documents designed to display in a web browser. I did use <a href="http://brackets.io/">Brackets</a> which is text editor to do the needed changes in the templets for my website, I like using Brackets because it allowing having both screen of the website and live preview together to work in code and see the changes happens in website in same time.</p>
+<p>In addition, I did use <a href="https://squidfunk.github.io/mkdocs-material/">Mkdocs</a> its editor that create .md files using Markdown language. This language similar to HTML but more easy and understandable, I select to use it in written my documentation to save time as I don’t have experience in HTML.</p>
+<p>Screen shot of my work in Brackets :</p>
+<p><img src="images2/brackets1.png" /></p>
+<h3 id="configuring-git">Activat MkDocs</h3>
+<p><a href="https://www.mkdocs.org/">MkDocs</a> is a simple and static site generator that’s prepared for building project documentation.</p>
+<p>Here I did summarize the commands for activation MKdocs :</p>
+<pre><code>python --version
+
+sudo easy_install pip
+
+pip --version
+
+sudo pip install mkdocs
+
+sudo pip install mkdocs-material
+
+mckdocs –version
+
+Sudo mckdocs serve</code></pre>
+<p>Screen shot when I was testing (Mkdocs):</p>
+<p><img src="images2/mkdocs1.png" /></p>
+    
+<p>It was really difficult to choose a specific template for your site, and in the midst of browsing the websites of the Fab Academy students, I liked a specific site, so I decided to use this theme, Many Thanks for <a href="https://fabacademy.org/2020/labs/uae/students/fatima-alhashmi/index.html">Fatima</a> . I used Fatima's design and I liked the way she organized the site.</p>
+<hr />
+
+<h3 id="update-04042020">Update : <em>31/01/2022</em></h3>
+    
+   <h3 id="faced-problems">Faced Problems :</h3> 
+<p>After testing both (HTML) & (Mkdocs) I decided to work with normal (HTML) using "Brackets", that because I am used to (HTML) sinc High school and becuse I face some problem while downloading (Mkdocs) I solved all the problems, but I liked working on the html.
+</p>
+    
+<p>Screen shot for (Mkdocs) Problems:</p>
+<p><img src="images2/mkdocs.png" /></p>
+<p><img src="images2/mkdocs4.png" /></p>
+<p> I discover that I have to use python3 in terminal instead of python, that same with pip -> pip3</p> 
+<p><img src="images2/mkdocs5.png" /></p>
+<code> pip3 install mkdocs-git-revision-date-localized-plugin</code>
+<p></p>
+<a href="https://pypi.org/project/mkdocs-git-revision-date-localized-plugin/">Mkdocs-git-revision</a> I used this link to solve the problem that shown above.
+    
+<p>I learned to removed all the files related to the old push files using the below commands.</p>
+<pre><code>git rm -r &quot; file_name.file_type&quot;
+
+git commit -m &quot;Comments&quot;
+
+git push</code></pre>
+<ul>
+<!-- Copyright -->
+        <br/>                  
+            <footer> 
+                <hr />
+                   <p>Copyright 2023 &#60;Abdallah Alhammadi&#62; - Creative Commons Attribution Non Commercial </p>
+                
+                   <p>Source code hosted at <a href="https://gitlab.fabcloud.org/academany/fabacademy/2023/labs/uae/students/abdallah-alhammadi">fabcloud/fabacademy/2023/abdallah-alhammadi</a></p>
+            </footer> 
+         <br/>
+</body>
+</html>
